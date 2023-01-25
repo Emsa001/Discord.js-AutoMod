@@ -207,20 +207,6 @@ class Application {
             })
             .setTimestamp();
 
-        const row = new ActionRowBuilder().addComponents(
-            new ButtonBuilder()
-                .setCustomId('application_accepted')
-                .setLabel('Accepted')
-                .setStyle(ButtonStyle.Success)
-                .setEmoji('✅')
-                .setDisabled(true),
-            new ButtonBuilder()
-                .setLabel('See application chat')
-                .setURL(`${invite}`)
-                .setStyle(ButtonStyle.Link)
-                .setDisabled(false)
-        );
-
         const userMessage = new EmbedBuilder()
             .setAuthor({
                 name: `${applicationUser.tag}'s ${applicationId} application`,
@@ -243,6 +229,8 @@ class Application {
                 { name: 'Portfolio', value: this.portfolio.value || 'none' }
             )
             .setTimestamp();
+
+        const invites = [];
 
         await this.interaction.guild.channels
             .create({
@@ -317,6 +305,7 @@ class Application {
                 channel.send({ embeds: [channelEmbed], components: [row] });
 
                 const invite = await channel.createInvite().catch(console.error);
+                invites.push(invite);
 
                 const userMessageRows = new ActionRowBuilder().addComponents(
                     new ButtonBuilder()
@@ -331,6 +320,20 @@ class Application {
                     components: [userMessageRows],
                 });
             });
+
+        const row = new ActionRowBuilder().addComponents(
+            new ButtonBuilder()
+                .setCustomId('application_accepted')
+                .setLabel('Accepted')
+                .setStyle(ButtonStyle.Success)
+                .setEmoji('✅')
+                .setDisabled(true),
+            new ButtonBuilder()
+                .setLabel('See application chat')
+                .setURL(`${invites[0]}`)
+                .setStyle(ButtonStyle.Link)
+                .setDisabled(false)
+        );
 
         return await this.interaction.update({ embeds: [embed], components: [row] });
     }
