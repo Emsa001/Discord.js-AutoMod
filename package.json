@@ -1,0 +1,29 @@
+{
+  "dependencies": {
+    "axios": "^1.2.0",
+    "canvagif": "^0.1.14",
+    "canvas": "^2.10.2",
+    "crypto": "^1.0.1",
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3",
+    "gif-gifcanvas": "^1.4.0",
+    "gifencoder": "^2.0.1",
+    "http": "^0.0.1-security",
+    "jimp": "^0.16.2",
+    "moment": "^2.29.4",
+    "mysql2": "^3.0.1",
+    "node-schedule": "^2.1.0",
+    "probability-node": "^0.0.1",
+    "sequelize": "^6.28.0",
+    "undici": "^5.12.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-node": "^4.1.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1"
+  }
+}

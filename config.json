@@ -1,0 +1,21 @@
+{
+    "roles": {
+        "news": "",
+        "updates": "",
+        "leaks": ""
+    },
+
+    "icons": {
+        "minereality": "",
+        "newGenerationServers": ""
+    },
+    "iconURL": "",
+    "channels": {
+        "applicationsParentId": "",
+        "applicationArchives": ""
+    },
+    "registerChannel": "",
+    "notificationsChannel": "",
+    "applicationChannel": "",
+    "applicationReviewChannel": ""
+}
