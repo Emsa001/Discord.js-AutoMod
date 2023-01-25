@@ -43,24 +43,49 @@ npm install
 
 2. Create .env file
 
-```bash
+```javascript
 DISCORD_BOT_CLIENTID=
 DISCORD_BOT_TOKEN=
 ```
 
 3. Fill database/database.js with your mysql data
 
-```bash
+```javascript
 const { Sequelize } = require('sequelize');
 module.exports = new Sequelize('', '', '', {
-  host: '',
-  dialect: 'mysql',
-  logging: false,
+    host: '',
+    dialect: 'mysql',
+    logging: false,
 });
 ```
 
 4. fill config.json with your data
-   You are all set! ✨
+
+```json
+{
+    "roles": {
+        "news": "",
+        "updates": "",
+        "leaks": ""
+    },
+
+    "icons": {
+        "minereality": "",
+        "newGenerationServers": ""
+    },
+    "iconURL": "",
+    "channels": {
+        "applicationsParentId": "",
+        "applicationArchives": ""
+    },
+    "registerChannel": "",
+    "notificationsChannel": "",
+    "applicationChannel": "",
+    "applicationReviewChannel": ""
+}
+```
+
+You are all set! ✨
 
 ## 🚧 Contributors
 
