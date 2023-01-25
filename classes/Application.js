@@ -78,7 +78,7 @@ class Application {
 
         const applicationSent = new EmbedBuilder()
             .setAuthor({
-                name: `Otrzymaliśmy twoją rekrutację!`,
+                name: `We've recieved your application!`,
                 iconURL: config.icons.minereality,
                 url: config.url,
             })
@@ -266,7 +266,7 @@ class Application {
                     },
                 ],
             })
-            .then(async (channel) => {
+            .then(async (channel, applicationId) => {
                 const channelEmbed = new EmbedBuilder()
                     .setAuthor({
                         name: `${applicationUser.tag}'s ${applicationId} application`,

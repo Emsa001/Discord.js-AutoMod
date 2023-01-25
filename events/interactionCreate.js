@@ -83,7 +83,7 @@ module.exports = {
                         );
                         var applicationId =
                             application.split('_')[1] ||
-                            interaction?.message?.embeds[0].author.name.split(' na ')[1] ||
+                            interaction?.message?.embeds[0].author.name.split(' on ')[1] ||
                             'error';
 
                         var applicationUser = await interaction?.client?.users
