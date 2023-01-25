@@ -266,7 +266,7 @@ class Application {
                     },
                 ],
             })
-            .then(async (channel, applicationId) => {
+            .then(async (channel) => {
                 const channelEmbed = new EmbedBuilder()
                     .setAuthor({
                         name: `${applicationUser.tag}'s ${applicationId} application`,

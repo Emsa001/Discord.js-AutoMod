@@ -26,12 +26,12 @@ Discord.js bot for applications and auto roles
 
 Discord Server: [https://discord.gg/euV4nHA5yB](https://discord.gg/euV4nHA5yB)
 
-![AutoRoles](https://i.imgur.com/8dokCVf.png)
+![AutoRoles](https://i.imgur.com/mFLZoYB.png)
 ![Applications](https://i.imgur.com/luHrtlb.png)
 ![Application's modal](https://i.imgur.com/UZneNPW.png)
-![Application created](https://i.imgur.com/28XGdB7.png)
-![Application accepted](https://i.imgur.com/5QTwGnm.gif)
-![Application accepted](https://i.imgur.com/qWWJ2xR.png)
+![Application created](https://i.imgur.com/QCXg50N.png)
+![Application accepted](https://i.imgur.com/2EWeSMG.gif)
+![Application accepted](https://i.imgur.com/YTujM8A.png)
 
 ## 🛠️ Installation Steps
 
