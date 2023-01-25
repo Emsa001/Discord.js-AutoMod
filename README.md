@@ -43,7 +43,7 @@ npm install
 
 2. Create .env file
 
-```javascript
+```env
 DISCORD_BOT_CLIENTID=
 DISCORD_BOT_TOKEN=
 ```
@@ -59,7 +59,7 @@ module.exports = new Sequelize('', '', '', {
 });
 ```
 
-4. fill config.json with your data
+4. Fill config.json with your data
 
 ```json
 {
