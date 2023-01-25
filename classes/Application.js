@@ -28,10 +28,10 @@ class Application {
             (element) => element.name === 'Email'
         );
         this.age = interaction?.message?.embeds[0]?.data?.fields?.find(
-            (element) => element.name === 'Wiek'
+            (element) => element.name === 'Age'
         );
         this.whyyou = interaction?.message?.embeds[0]?.data?.fields?.find(
-            (element) => element.name === 'Dlaczego ty'
+            (element) => element.name === 'Why you'
         );
         this.portfolio = interaction?.message?.embeds[0]?.data?.fields?.find(
             (element) => element.name === 'Portfolio'
@@ -48,15 +48,15 @@ class Application {
 
         const embed = new EmbedBuilder()
             .setAuthor({
-                name: `Rekurtacja ${user.tag} na ${applicationId}`,
+                name: `${user.tag}'s application on ${applicationId}`,
                 iconURL: config.icons.minereality,
                 url: config.url,
             })
             .addFields(
-                { name: 'Rekrutujący', value: `${user}`, inline: true },
+                { name: 'User', value: `${user}`, inline: true },
                 { name: 'Email', value: email, inline: true },
-                { name: 'Wiek', value: age, inline: true },
-                { name: 'Dlaczego ty', value: whyyou },
+                { name: 'Age', value: age, inline: true },
+                { name: 'Why you', value: whyyou },
                 { name: 'Portfolio', value: portfolio }
             )
             .setFooter(embedConfig.footer);
@@ -83,12 +83,12 @@ class Application {
                 url: config.url,
             })
             .setDescription(
-                `Twoja rekrutacja na **${applicationId}** została wysłana do naszego teamu!\nW ciągu maksymalnie **3 dni** otrzymasz odpowiedź cyz przechodzisz do kolejnego etapu rekrutacji.\n**Życzymy powodzenia 🥳**\n\nJak wygląda twoja rekrutacja:`
+                `Your application **${applicationId}** has been sent to our team!\In **3** days you will get a message from our team.\n**Good luck 🥳**\n\nYour application:`
             )
             .addFields(
-                { name: 'Wiek', value: age, inline: true },
+                { name: 'Age', value: age, inline: true },
                 { name: 'Email', value: email, inline: true },
-                { name: 'Dlaczego ty', value: whyyou },
+                { name: 'Why uoi', value: whyyou },
                 { name: 'Portfolio', value: portfolio }
             )
             .setFooter(embedConfig.footer);
@@ -118,7 +118,7 @@ class Application {
         if (checkUserApplications) {
             if (checkUserApplications.status === 'open') {
                 await this.interaction.reply({
-                    content: 'Już stworzyłeś taką aplikację',
+                    content: `You have already creaded this application`,
                     ephemeral: true,
                 });
                 await wait(5000);
@@ -130,7 +130,7 @@ class Application {
 
                 if (now.diff(ApplicationCreatedAt, 'days') <= 3) {
                     await this.interaction.reply({
-                        content: 'Aplikację możesz tworzyć raz na 3 dni',
+                        content: 'You can create one application in 3 days',
                         ephemeral: true,
                     });
                     await wait(5000);
@@ -149,27 +149,27 @@ class Application {
 
         var age = new TextInputBuilder()
             .setCustomId('age')
-            .setLabel('Twój wiek:')
+            .setLabel('Your age:')
             .setMinLength(1)
             .setMaxLength(2)
             .setStyle(TextInputStyle.Short);
 
         var email = new TextInputBuilder()
             .setCustomId('email')
-            .setLabel('Twój adres email')
+            .setLabel('Your email')
             .setMinLength(3)
             .setMaxLength(100)
             .setStyle(TextInputStyle.Short);
 
         var whyyou = new TextInputBuilder()
             .setCustomId('whyyou')
-            .setLabel('Dlaczego ty?')
+            .setLabel('Why you?')
             .setMinLength(100)
             .setStyle(TextInputStyle.Paragraph);
 
         var portfolio = new TextInputBuilder()
             .setCustomId('portfolio')
-            .setLabel('Link do portfolio')
+            .setLabel('Your portfolio')
             .setRequired(false)
             .setStyle(TextInputStyle.Short);
 
@@ -193,7 +193,7 @@ class Application {
             .setColor('#22bb33')
             .addFields(
                 {
-                    name: 'Rekrutujący',
+                    name: 'User',
                     value: `${applicationUser}`,
                     inline: true,
                 },
