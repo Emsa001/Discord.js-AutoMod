@@ -12,7 +12,7 @@ module.exports = {
             const embed = new EmbedBuilder()
                 .setColor('#A020F0')
                 .setAuthor({
-                    name: 'Rekrutacja',
+                    name: 'Applications',
                     iconURL: config.icons.minereality,
                     url: config.url,
                 })
